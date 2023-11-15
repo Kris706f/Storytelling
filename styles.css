@@ -46,9 +46,7 @@ body{
     padding-top: 15px;
   }
 
-  #section2{
-    background-color: rgba(255, 255, 255, 0.7);
-  }
+
 
   /*Herunder er css til selve teksten i toppen*/
   h1{
@@ -79,14 +77,29 @@ h3{
     z-index: 10;
 }
   h2{
-    color: #000;
+    color: #fff;
     font-family: 'Junge', cursive;
-    text-transform: uppercase;
-    font-size: 15px;
+    font-size: 25px;
     padding: 5px 5px;
-    word-spacing: 15px;
-    text-align: center;
-    font-weight: bold;
+    word-spacing: 10px;
+    text-align: left;
+    font-weight: 100;
+
+
+    overflow: hidden; /* Skjuler tekst, der ikke passer inden for containeren */
+  white-space: normal; /* Forhindrer teksten i at bryde linjer */
+  opacity: 0; /* Start med tekst skjult */
+  transition: opacity 1s; /* Animer opacity over 1 sekund */
+    
+}
+/* CSS for at afsløre tekst, når den er i synsfeltet */
+h2.in-view {
+    opacity: 1; /* Vis tekst ved fuld opacity */
+  }
+#section2 h2{
+    width: 50%;
+    border-radius: 25px;
+    padding-top: 5%;
 }
 /*Herunder er css til de forskellige videoer*/
 #background-video {

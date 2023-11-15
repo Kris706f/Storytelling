@@ -19,7 +19,7 @@ body{
   .full-screen-bg img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Sørg for, at billedet dækker hele containeren */
+    object-fit: cover; /* Sørger for, at billedet dækker hele containeren */
   }
   .content {
     position: absolute;
@@ -33,6 +33,11 @@ body{
     padding: 20px;
     display: flex;
     justify-content: space-around;
+    animation: fadeInAndSlide 4s ease-in-out forwards;
+  }
+  .section img{
+    transform-origin: left top;
+    animation: spinIn 4s ease-in-out forwards;
   }
   .sectionTo{
     justify-content: space-around;
@@ -52,22 +57,27 @@ body{
     font-size: 80px;
     text-transform: uppercase;
     letter-spacing: 5%;
+    font-weight: 900;
     font-family: 'Racing Sans One', sans-serif;
-    margin-top: -300px;
-    z-index: 2;
+    margin-top: -500px;
+    z-index: 10;
 
+}
+.overskrift{
+    width: 70%;
 }
 h3{
     color: #000;
     margin-left: 5%;
+    margin-top: -70px;
+    margin-bottom: 500px;
     font-size: 20px;
-    font-weight: 100;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 8px;
-    font-family: 'Fredericka the Great', serif;
-    z-index: 3;
+    font-family: 'Racing Sans One', sans-serif;
+    z-index: 10;
 }
-
   h2{
     color: #000;
     font-family: 'Junge', cursive;
@@ -81,14 +91,9 @@ h3{
 /*Herunder er css til de forskellige videoer*/
 #background-video {
     width: 100%;
-    height: 600px;
+    height: 750px;
     object-fit: cover;
-    position: relative;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
+    z-index: 1;
   }
   h4{
     color: #fff;
@@ -104,7 +109,32 @@ h3{
     border-radius: 25px;
 }
 
+/*Herunder vil der være css til animationer*/
 
+@keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  h1, h3 {
+    overflow: hidden;
+    white-space: nowrap; /* Undgå at teksten bryder linjer */
+    animation: typewriter 4s steps(500) 0.5s forwards; /* Juster varighed og antal trin efter behov */
+  }
 
+  .section img {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 2s, opacity 1s ease-in-out;
+  }
+  
+  .section.in-view img {
+    visibility: visible;
+    opacity: 1;
+  }
 
-
+  

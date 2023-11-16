@@ -54,7 +54,6 @@ body{
     margin-left: 5%;
     font-size: 80px;
     text-transform: uppercase;
-    letter-spacing: 5%;
     font-weight: 900;
     font-family: 'Racing Sans One', sans-serif;
     margin-top: -500px;
@@ -96,7 +95,7 @@ h3{
 h2.in-view {
     opacity: 1; /* Vis tekst ved fuld opacity */
   }
-#section2 h2{
+.section h2{
     width: 50%;
     border-radius: 25px;
     padding-top: 5%;
